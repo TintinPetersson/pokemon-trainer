@@ -1,13 +1,23 @@
-<div class="flex flex-wrap px-40 pt-20">
-    <div *ngFor="let pokemon of pokemons; index as i;" class="flex-1 text-center shadow m-4 rounded-xl w-60">
-        <img class="block h-40 w-40 p-4"
-            src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{i+1}}.png"
-            alt="Pokemon picture">
-        <div class="px-12 pb-3">
-            <div class="font-bold text-md uppercase">{{ pokemon.name }}</div>
-        </div>
-        <div class="mb-5">
-            <app-catch-pokemon-button [pokemonName]="pokemon.name"></app-catch-pokemon-button>
+<div class="container mx-auto px-4 md:px-12">
+
+    <input class="block border-2 w-full p-4 text-lg mb-4 border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500" type="text" name="search" [(ngModel)]="searchText" placeholder="Search by name...">
+
+    <div class="flex flex-wrap -mx-1 lg:-mx-4">
+        <div *ngFor="let pokemon of pokemons | filter:searchText; index as i;" class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/4">
+            <article class="rounded-lg shadow-lg hover:scale-105 hover:bg-yellow-400">
+                    <img alt="Placeholder" class="block h-auto w-full" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{i+1}}.png">
+                <header class="flex items-center justify-center p-2 md:p-4">
+                        <div class=" text-black uppercase font-extrabold text-md">
+                            {{ pokemon.name }}
+                        </div>
+                    <!-- <p class="text-grey-darker text-sm">
+                        11/1/19
+                    </p> -->
+                </header>
+                    <div class="p-2 md:p-4 text-center">
+                        <app-catch-pokemon-button [pokemonName]="pokemon.name"></app-catch-pokemon-button>
+                    </div>
+            </article>
         </div>
     </div>
 </div>

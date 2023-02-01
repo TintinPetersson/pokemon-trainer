@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { PokemonListComponent } from './components/pokemon-list/pokemon-list.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { CatchPokemonButtonComponent } from './components/catch-pokemon-button/catch-pokemon-button.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { CatchPokemonButtonComponent } from './components/catch-pokemon-button/c
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    Ng2SearchPipeModule,
     HttpClientModule
   ],
   providers: [],
