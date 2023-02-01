@@ -10,6 +10,8 @@ import { PokemonCataloguePage } from './pages/pokemon-catalogue/pokemon-catalogu
 import { LoginFormComponent } from './components/login-form/login-form.component'
 import { FormsModule } from '@angular/forms';
 import { PokemonListComponent } from './components/pokemon-list/pokemon-list.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { CatchPokemonButtonComponent } from './components/catch-pokemon-button/catch-pokemon-button.component';
 
 
 @NgModule({
@@ -20,6 +22,8 @@ import { PokemonListComponent } from './components/pokemon-list/pokemon-list.com
     PokemonCataloguePage,
     LoginFormComponent,
     PokemonListComponent,
+    NavbarComponent,
+    CatchPokemonButtonComponent,
   ],
   imports: [
     BrowserModule,
