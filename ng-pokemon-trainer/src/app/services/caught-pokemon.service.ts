@@ -41,7 +41,9 @@ export class CaughtPokemonService {
     }
 
     if (this.userService.inCaughtPokemon(pokemonName)) {
-      throw new Error("This pokémon is already caught");
+      this.userService.removeFromCaughtPokemons(pokemonName);
+    } else {
+      this.userService.addToCaughtPokemon(pokemonName);
     }
 
     const headers = new HttpHeaders({
@@ -52,7 +54,7 @@ export class CaughtPokemonService {
     this._loading = true;
 
     return this.http.patch<User>(`${apiUsers}/${user.id}`, {
-      pokemon: [...user.pokemon, pokemon.name]
+      pokemon: [...user.pokemon]
     }, {
       headers
     })
