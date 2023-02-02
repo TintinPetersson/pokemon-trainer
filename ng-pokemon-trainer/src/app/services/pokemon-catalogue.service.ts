@@ -9,13 +9,22 @@ const { apiPokemons } = environment;
 })
 export class PokemonCatalogueService {
 
-  private _pokemons: Pokemon[] = []
   private _error: string = "";
   private _loading: boolean = false;
 
-  public get pokemons(): Pokemon[] {
+  public pokemons(): Pokemon[] {
+
+    for (let pokemon of this._pokemons) {
+
+      const replaced = pokemon.url.replace(/\D/g, '');
+      const pokemonImageId = replaced.substring(1);
+
+      pokemon.image = pokemonImageId;
+    }
+
     return this._pokemons;
   }
+
   public get error(): string {
     return this._error;
   }
@@ -25,6 +34,8 @@ export class PokemonCatalogueService {
   }
 
   constructor(private readonly http: HttpClient) { }
+
+  private _pokemons: Pokemon[] = JSON.parse(sessionStorage.getItem('pokemons') || '[]');
 
   public fetchPokemons(): void {
     this._loading = true;
@@ -37,7 +48,7 @@ export class PokemonCatalogueService {
       .subscribe({
         next: (data: any) => {
           this._pokemons = data.results;
-          // sessionStorage.setItem('pokemons', JSON.stringify(data.results))
+          sessionStorage.setItem('pokemons', JSON.stringify(data.results))
         },
         error: (error: HttpErrorResponse) => {
           this._error = error.message;
