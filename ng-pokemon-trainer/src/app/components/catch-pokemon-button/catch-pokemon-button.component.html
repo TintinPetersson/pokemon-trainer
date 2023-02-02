@@ -1,4 +1,14 @@
-<button (click)="onCatchClick()">
-    <img id="pokeball" src="/assets/img/pokeball.png" class="w-8" />
-</button>
-<p class="text-gray-400 text-sm italic">Press ball to catch!</p>
+<div *ngIf="isCaught; then caught else notCaught"></div>
+
+<ng-template #caught>
+    <button (click)="onCatchClick()">
+        <img id=" pokeball" src="/assets/img/pokeball.png" class="w-8" />
+    </button>
+    <p class="text-gray-400 text-sm italic">Press to release me!</p>
+</ng-template>
+<ng-template #notCaught>
+    <button (click)="onCatchClick()">
+        <img id="pokeball" src="https://cdn-icons-png.flaticon.com/512/868/868596.png" class="w-8" />
+    </button>
+    <p class="text-gray-400 text-sm italic">Press ball to catch!</p>
+</ng-template>

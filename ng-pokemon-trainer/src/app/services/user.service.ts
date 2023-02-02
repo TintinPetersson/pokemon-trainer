@@ -30,4 +30,16 @@ export class UserService {
     }
     return false;
   }
+
+  public addToCaughtPokemon(pokemon: string): void {
+    if (this._user) {
+      this._user.pokemon.push(pokemon);
+    }
+  }
+
+  public removeFromCaughtPokemons(pokemonName: string): void {
+    if (this._user) {
+      this._user.pokemon = this._user.pokemon.filter((pokemon: string) => pokemon !== pokemonName);
+    }
+  }
 }
