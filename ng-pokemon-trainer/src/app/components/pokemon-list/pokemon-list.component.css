@@ -1,0 +1,37 @@
+.container{
+    font-family: 'Kanit', sans-serif;
+}
+
+.card1 {
+    display: block;
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+  }
+  .card1:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 420px;
+    left: 160px;
+    background: rgb(251,243,63);
+    background: radial-gradient(circle, rgba(251,243,63,1) 0%, rgba(252,118,70,1) 100%);
+    height: 5px;
+    width: 5px;
+    border-radius: 5px;
+    transform: scale(1);
+    transform-origin: 50% 50%;
+    transition: transform 0.25s ease-out;
+  }
+  .card1:hover:before {
+    transform: scale(250);
+  }
+  
+  .card1:hover p {
+    transition: all 0.3s ease-out;
+    color: rgb(255, 255, 255);
+  }
+  .card1:hover h3 {
+    transition: all 0.3s ease-out;
+    color: #ffffff;
+  }

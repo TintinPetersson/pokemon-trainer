@@ -16,8 +16,8 @@ export class PokemonCatalogueService {
 
     for (let pokemon of this._pokemons) {
 
-      const replaced = pokemon.url.replace(/\D/g, '');
-      const pokemonImageId = replaced.substring(1);
+      const urlOnlyDigits = pokemon.url.replace(/\D/g, '');
+      const pokemonImageId = urlOnlyDigits.substring(1);
 
       pokemon.image = pokemonImageId;
     }
