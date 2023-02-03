@@ -14,12 +14,6 @@ const { apiKey, apiUsers } = environment;
 })
 export class CaughtPokemonService {
 
-  private _loading: boolean = false;
-
-  get loading(): boolean {
-    return this._loading;
-  }
-
   constructor(
     private http: HttpClient,
     private readonly pokemonCatalogoueService: PokemonCatalogueService,
@@ -51,8 +45,6 @@ export class CaughtPokemonService {
       'x-api-key': apiKey
     })
 
-    this._loading = true;
-
     return this.http.patch<User>(`${apiUsers}/${user.id}`, {
       pokemon: [...user.pokemon]
     }, {
@@ -61,9 +53,6 @@ export class CaughtPokemonService {
       .pipe(
         tap((updatedUser: User) => {
           this.userService.user = updatedUser;
-        }),
-        finalize(() => {
-          this._loading = false
         })
       )
   }
