@@ -14,6 +14,11 @@ export class PokemonListComponent implements OnInit {
 
   constructor() {
   }
+
+  onPokemonHover(): void {
+    console.log("hej")
+  }
+
   ngOnInit(): void {
   }
 }
