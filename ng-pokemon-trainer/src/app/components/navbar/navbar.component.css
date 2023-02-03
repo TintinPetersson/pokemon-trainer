@@ -1,4 +1,13 @@
-.border-4{
-    border-color: black;
-    font-family: 'Kanit', sans-serif;
+.navItem{
+    letter-spacing: 2px;
+    transition: ease-in-out .2s;
+}
+
+.navItem:hover{
+    letter-spacing: 3px;
+    border-bottom: 1px solid white;
+    font-weight: bold;
+}
+
+nav{
 }

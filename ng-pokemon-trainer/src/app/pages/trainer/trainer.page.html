@@ -1,1 +1,10 @@
-<p>trainer works!</p>
+<header class="container mx-auto p-4 text-center">
+    <h1 class="text-3xl">Welcome back <span class="font-semibold">{{ user?.username
+            }}</span>!
+    </h1>
+</header>
+
+<main class="container mx-auto p-4 text-center">
+    <h4 class="text-xl mb-2">Your caught Pokémon: </h4>
+    <app-pokemon-list [pokemons]="pokemons"></app-pokemon-list>
+</main>

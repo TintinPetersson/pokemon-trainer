@@ -55,7 +55,7 @@ export class PokemonCatalogueService {
         },
       });
   }
-  public pokemonByName(name: string): Pokemon | undefined {
+  public pokemonByName(name: string | undefined): Pokemon | undefined {
     return this._pokemons.find((pokemon: Pokemon) => pokemon.name === name);
   }
 }
