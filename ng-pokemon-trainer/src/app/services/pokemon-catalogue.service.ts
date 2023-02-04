@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { finalize } from 'rxjs/operators'
 import { Pokemon } from '../models/pokemon.model';
+import { Observable } from 'rxjs';
 const { apiPokemons } = environment;
 @Injectable({
   providedIn: 'root'
@@ -57,5 +58,13 @@ export class PokemonCatalogueService {
   }
   public pokemonByName(name: string | undefined): Pokemon | undefined {
     return this._pokemons.find((pokemon: Pokemon) => pokemon.name === name);
+  }
+
+  pokemonAbilities(pokemon: Pokemon | undefined) {
+    if (pokemon) {
+      const url = pokemon?.url;
+      return this.http.get<Pokemon>(url)
+    }
+    return undefined;
   }
 }

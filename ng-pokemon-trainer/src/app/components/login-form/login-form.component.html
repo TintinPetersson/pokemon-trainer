@@ -19,11 +19,19 @@
         </div>
       </div>
     </div>
+     <ng-container *ngIf="!loading else spinner">
     <div class="pt-3">
       <button [disabled]="loginForm.invalid"
         class="h-12 px-6 w-52 bg-blue-600 mt-2 mb-3 rounded font-bold text-md text-white" type="submit">
         Sign In
       </button>
     </div>
+     </ng-container>
+
+      <ng-template #spinner>
+    <span class="material-icons animate-spin">refresh</span>
+    <p>Logging in...</p>
+</ng-template>
+
   </form>
 </div>

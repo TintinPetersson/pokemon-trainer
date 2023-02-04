@@ -1,0 +1,26 @@
+ <div class="container text-center">
+ <ng-container *ngIf="!loading else spinner">
+    <div>
+        <button (click)="onMoreInfo()" class="px-3">{{ infoText }}</button>
+        <div *ngIf="isClicked; then clicked else notClicked"></div>
+    </div>
+ </ng-container>
+ </div>
+
+
+ <ng-template #spinner>
+    <span class="material-icons animate-spin">refresh</span>
+</ng-template>
+
+<ng-template #clicked>
+    <div id="moreInfoDiv">
+        <span class="font-boldtext-sm px-3 text-green-500">HP: <span class="text-white"> {{ pokemonHP }}</span><br></span>
+        <span class="font-boldtext-sm px-3 text-red-700">Attack: <span class="text-white"> {{ pokemonAttack }}<br></span></span>
+        <span class="font-boldtext-sm px-3 text-yellow-700">Weight: <span class="text-white"> {{ pokemonWeight }}</span></span>
+    </div>
+</ng-template>
+
+<ng-template #notClicked>
+</ng-template>
+
+
