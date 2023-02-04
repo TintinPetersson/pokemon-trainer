@@ -13,6 +13,7 @@ import { PokemonListComponent } from './components/pokemon-list/pokemon-list.com
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { CatchPokemonButtonComponent } from './components/catch-pokemon-button/catch-pokemon-button.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { InfoPokemonComponent } from './components/info-pokemon/info-pokemon.component';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     PokemonListComponent,
     NavbarComponent,
     CatchPokemonButtonComponent,
+    InfoPokemonComponent,
   ],
   imports: [
     BrowserModule,
