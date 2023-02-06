@@ -8,6 +8,11 @@
             <li class="mx-12">
                 <a class="navItem text-white text-md font-light" routerLink="/trainer">TRAINER</a>
             </li>
+            <li class="text-center">
+                <p class="text-sm"> - {{ user.username }} - </p>
+                <a (click)="handleLogout()" class="navItem text-white text-sm font-light" routerLink="/Login">LOG
+                    OUT</a>
+            </li>
         </ul>
     </ng-container>
 

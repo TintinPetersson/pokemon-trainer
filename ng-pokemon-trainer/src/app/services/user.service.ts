@@ -42,4 +42,9 @@ export class UserService {
       this._user.pokemon = this._user.pokemon.filter((pokemon: string) => pokemon !== pokemonName);
     }
   }
+
+  public logoutUser(): void {
+    this.user = undefined;
+    window.location.reload();
+  }
 }
