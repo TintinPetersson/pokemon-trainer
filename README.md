@@ -1,6 +1,6 @@
 # Pokemon Trainer
 
-### Link to Vercel app:
+### Link to Vercel app: https://your-pokemon-trainer.vercel.app
 
 ### Link to component tree in figma: https://www.figma.com/file/llCO6FRjwkyGs0jvoBsetO/Pokemon-Trainer-Component-Tree?node-id=0%3A1&t=ikBFHs00PJUAiFR8-0
 
